@@ -3,7 +3,7 @@
 
 void show_spaces(std::string &secret_word) {
 
-  std::cout << "Secret word: ";
+  std::cout << std::endl << "Secret word: ";
 
   for (char letter : secret_word) {
 
@@ -11,6 +11,6 @@ void show_spaces(std::string &secret_word) {
 
   }
 
-  std::cout << std::endl;
+  std::cout << std::endl << std::endl;
 
 }

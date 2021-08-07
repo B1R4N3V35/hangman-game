@@ -10,19 +10,21 @@
 #include "show_word.h"
 #include "show_missed.h"
 #include "end_game.h"
+#include "show_menu.h"
 
 using namespace std;
 
 int main () {
 
   const string game_title = "HANGMAN GAME";
-  string word_bank = "word_bank.wbk";
+  string word_bank;
   string secret_word;
   const int max_attempts = 5;
   map<char, bool> guessed;
   vector<char> missed_guesses;
 
   show_header(game_title, max_attempts);
+  word_bank = show_menu();
   secret_word = draw_word(word_bank);
   show_spaces(secret_word);
 

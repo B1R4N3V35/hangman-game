@@ -8,7 +8,7 @@
 void add_word(std::string &file_name) {
 
   std::string new_word;
-  std::cout << "Type the new word (capital letters only): ";
+  std::cout << "Type the new word from the theme you chose (capital letters only, no spaces): ";
   std::cin >> new_word;
 
   std::vector<std::string> words_list = read_file(file_name);
