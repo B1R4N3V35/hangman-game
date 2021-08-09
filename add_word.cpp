@@ -4,6 +4,7 @@
 #include "add_word.h"
 #include "read_file.h"
 #include "save_file.h"
+#include "sort.h"
 
 void add_word(std::string &file_name) {
 
@@ -13,6 +14,7 @@ void add_word(std::string &file_name) {
 
   std::vector<std::string> words_list = read_file(file_name);
   words_list.push_back(new_word);
+  sort(words_list);
 
   save_file(words_list, file_name);
 
