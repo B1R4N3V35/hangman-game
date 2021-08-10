@@ -2,7 +2,7 @@
 #include "guess.h"
 #include "letter_exists.h"
 
-void guess(std::map<char, bool> &guessed, std::vector<char> &missed_guesses, std::string &secret_word) {
+void guess(std::map<char, bool> &guessed, std::vector<char> &missed_guesses, std::string &secret_word, int &errors) {
 
   char guess_char;
   std::cout << "Your guess: ";
@@ -11,7 +11,11 @@ void guess(std::map<char, bool> &guessed, std::vector<char> &missed_guesses, std
 
   guessed[guess_char] = true;
 
-  if (! letter_exists(guess_char, secret_word))
+  if (! letter_exists(guess_char, secret_word)) {
+
     missed_guesses.push_back(guess_char);
+    errors++;
+  
+  }
 
 }
